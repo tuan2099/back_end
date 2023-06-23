@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learning_progresses",
+  "info": {
+    "singularName": "learning-progress",
+    "pluralName": "learning-progresses",
+    "displayName": "LearningProgress",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "completed": {
+      "type": "boolean"
+    },
+    "lesson_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lesson-item.lesson-item",
+      "inversedBy": "learning_progresses"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "learning_progresses"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "learning_progresses"
+    }
+  }
+}

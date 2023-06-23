@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "Chapter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lesson_name": {
+      "type": "string"
+    },
+    "lesson_description": {
+      "type": "string"
+    },
+    "lesson_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lesson-item.lesson-item"
+    }
+  }
+}
